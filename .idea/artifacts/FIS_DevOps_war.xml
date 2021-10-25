@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="FIS_DevOps:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>FIS_DevOps</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="fis-devops-1.1.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="FIS_DevOps:war exploded" />
+    </root>
+  </artifact>
+</component>

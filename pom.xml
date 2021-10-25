@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>com.example</groupId>
 	<artifactId>fis-devops</artifactId>
 	<version>1.1.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-
 	<name>fis-devops</name>
 	<description>DevOps Demo Project for D1</description>
-
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.6.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath />
+		<!-- lookup parent from repository -->
 	</parent>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -24,40 +21,37 @@
 		<surefire.version>2.17</surefire.version>
 		<jacoco.version>0.7.9</jacoco.version>
 	</properties>
-
 	<!-- <distributionManagement>
-		<repository>
-		  <id>release</id>
-		  <name>demo-libs-release</name>
-		  <url>http://10.7.142.127:8082/artifactory/demo-libs-release/</url>
-		</repository>
+         <repository>
+           <id>release</id>
+           <name>demo-libs-release</name>
+           <url>http://10.7.142.127:8082/artifactory/demo-libs-release/</url>
+         </repository>
+         <snapshotRepository>
+           <id>snapshots</id>
+           <name>demo-libs-snapshot</name>
+           <url>http://10.7.142.127:8082/artifactory/demo-libs-snapshot/</url>
+         </snapshotRepository>
+     </distributionManagement>
+ -->
+	<distributionManagement>
 		<snapshotRepository>
-		  <id>snapshots</id>
-		  <name>demo-libs-snapshot</name>
-		  <url>http://10.7.142.127:8082/artifactory/demo-libs-snapshot/</url>
+			<id>snapshots</id>
+			<name>vlmaz2021tn252-snapshots</name>
+			<url>http://10.7.143.73:8081/artifactory/fis-demo</url>
 		</snapshotRepository>
 	</distributionManagement>
--->
-<distributionManagement>
-<snapshotRepository>
-<id>snapshots</id>
-<name>vlmaz2021tn252-snapshots</name>
-<url>http://10.7.143.73:8081/artifactory/fis-demo
-</snapshotRepository>
-</distributionManagement>
-
 	<scm>
 		<connection>scm:git:git@github.com:satyacicd/fisapi-demo.git</connection>
 		<developerConnection>scm:git:git@github.com:satyacicd/fisapi-demo.git</developerConnection>
 		<url>git@github.com:satyacicd/fisapi-demo.git</url>
 		<tag>HEAD</tag>
 	</scm>
-
 	<dependencies>
 		<!--<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-parent</artifactId>
-		</dependency>-->
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-parent</artifactId>
+          </dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -67,8 +61,8 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-logging</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -86,11 +80,10 @@
 			<optional>true</optional>
 		</dependency>
 		<!--<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-		</dependency>-->
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-tomcat</artifactId>
+          </dependency>-->
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -107,25 +100,30 @@
 				</configuration>
 			</plugin>
 			<plugin>
-			  <groupId>org.apache.maven.plugins</groupId>
-			  <artifactId>maven-surefire-plugin</artifactId>
-			  <version>${surefire.version}</version><!--$NO-MVN-MAN-VER$-->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${surefire.version}</version>
+				<!--$NO-MVN-MAN-VER$-->
 			</plugin>
 			<plugin>
-			    <groupId>org.jacoco</groupId>
-			    <artifactId>jacoco-maven-plugin</artifactId>
-			    <version>${jacoco.version}</version>
-			    <executions>
-			        <execution>
-			            <id>default-prepare-agent</id>
-			            <goals><goal>prepare-agent</goal></goals>
-			        </execution>
-			        <execution>
-			            <id>default-report</id>
-			            <phase>prepare-package</phase>
-			            <goals><goal>report</goal></goals>
-			        </execution>
-			    </executions>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<executions>
+					<execution>
+						<id>default-prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
